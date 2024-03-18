@@ -5,22 +5,70 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/main.css"/>
+    <style>
+
+        
+    </style>
 </head>
 <body>
-
-<div class="container-fluid text-center top-container">
-    <img src="static/images/calculator_blank.png" style="width: 45%; max-width: 45%; height: auto;">
-</div>
-
-<div class="container">
-    <div class="banner">
-        <div class="col-md-12 text-center">
-            <h1>Hello my name is Cal.</h1>
-            <h3>Let's get started.</h3>
+    <div class="container">
+        <div class="banner">
+            <div class="col-md-12 text-center">
+                <h1>Hello my name is Cal.</h1>
+                <h3>Let's get started.</h3>
+            </div>
         </div>
-    </div>
-</div>
 
-{%include "includes/footer.html" %}
+        <div class="content">
+            <div class="container-fluid text-center top-container">
+                <img src="static/images/calculator_blank.png" class="responsive-image">
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="calculator"></div>
+            <div class="display">
+                <input type="text" id="result" readonly>
+            </div>
+            <div class="buttons">
+                <button class="button" onclick="clearDisplay()">C</button>
+                <button class="button" onclick="appendNumber(1)">1</button>
+                <button class="button" onclick="appendNumber(2)">2</button>
+                <button class="button" onclick="appendNumber(3)">3</button>
+                <button class="button" onclick="appendOperator('+')">+</button>
+                <button class="button" onclick="appendNumber(4)">4</button>
+                <button class="button" onclick="appendNumber(5)">5</button>
+                <button class="button" onclick="appendNumber(6)">6</button>
+                <button class="button" onclick="appendOperator('-')">-</button>
+                <button class="button" onclick="appendNumber(7)">7</button>
+                <button class="button" onclick="appendNumber(8)">8</button>
+                <button class="button" onclick="appendNumber(9)">9</button>
+                <button class="button" onclick="appendOperator('*')">x</button>
+                <button class="button" onclick="appendNumber(0)">0</button>
+                <button class="button" onclick="appendOperator('/')">/</button>
+                <button class="button" onclick="calculate()">=</button>
+            </div>
+        </div>
+        
+        <script>
+            function clearDisplay() {
+                document.getElementById('result').value = '';
+            }
+
+            function appendNumber(number) {
+                document.getElementById('result').value += number;
+            }
+
+            function appendOperator(operator) {
+                document.getElementById('result').value += operator;
+            }
+
+            function calculate() {
+                const expression = document.getElementById('result').value;
+                const result = eval(expression);
+                document.getElementById('result').value = result;
+            }
+        </script>
+    </div>
 </body>
 </html>
