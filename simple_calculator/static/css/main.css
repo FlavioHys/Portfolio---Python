@@ -1,7 +1,4 @@
-* {
-    box-sizing: border-box;
-}
-
+*,
 *:before,
 *:after {
     box-sizing: border-box;
@@ -12,81 +9,81 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     position: relative;
-    margin:0px;
+    margin: 0;
 }
 
 header {
     text-align: center;
 }
 
-footer {
-    text-align: center;
-    height: 50px;
-    color: white;
-    padding: 5px;
-    margin-top: 10px;
-    bottom: 0px;
+/* Content styling */
+.content {
+    margin-top: 20px;
 }
 
-.btn-submit {
-    background-color: cornflowerblue;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
+.top-container {
+    position: relative;
+    margin-top: 20px;
 }
-.btn-submit:hover {
-    opacity: 1;
-}
-
-.calculator {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.button {
-    height: 60px;
-    width: 60px;
-    margin: 5px; 
-    background-color: #f1f1f1;
-    border: 1px solid #d9d9d9;
-    border-radius: 50%; 
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #d9d9d9;
-}
-
 
 .responsive-image {
     width: 50%;
     height: 50%;
 }
- 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+
+/* Movable buttons styling */
+#main-buttons {
+    position: absolute;
+    top: 55%;
+    left: 49.95%;
+    transform: translate(-50%, -50%);
 }
 
-.container {
-    display: block;
-    flex-direction: column;
-    min-height: 100px;
+.display {
+    margin-bottom: 10px;
 }
 
-.content {
-    flex: 1;
-    overflow-x: hidden;
+#result {
+    width: 90%;
+    justify-content: center;
+    padding: 20px;
+    top: 10%;
+    font-size: 1.5rem;
+    text-align: right;
 }
 
-.footer {
-    flex-shrink: 2;
+.buttons {
+    display: grid;
+    top: 9%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    padding: 25%;
+    font-size: 1.7rem;
+    color: white;  
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2d231d, #261e18);
+    box-shadow:  6px 6px 14px #231b16,
+                -6px -6px 14px #312720;
+}
+.opperand {
+    padding: 25%;
+    font-size: 1.7rem;
+    color: white;  
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d5af98, #b39480);
+    box-shadow:  6px 6px 14px #a58876,
+                -6px -6px 14px #e9c0a6;
+
+}
+
+.button:hover {
+    background-color: #532911b7;
 }
