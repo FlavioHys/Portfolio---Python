@@ -18,35 +18,39 @@
                 <h3>Let's get started.</h3>
             </div>
         </div>
-
+    
         <div class="content">
             <div class="container-fluid text-center top-container">
                 <img src="static/images/calculator_blank.png" class="responsive-image">
             </div>
         </div>
-
-        <div class="footer">
-            <div class="calculator"></div>
+    
+        <div id="main-buttons">
             <div class="display">
                 <input type="text" id="result" readonly>
             </div>
             <div class="buttons">
-                <button class="button" onclick="clearDisplay()">C</button>
-                <button class="button" onclick="appendNumber(1)">1</button>
-                <button class="button" onclick="appendNumber(2)">2</button>
-                <button class="button" onclick="appendNumber(3)">3</button>
-                <button class="button" onclick="appendOperator('+')">+</button>
-                <button class="button" onclick="appendNumber(4)">4</button>
-                <button class="button" onclick="appendNumber(5)">5</button>
-                <button class="button" onclick="appendNumber(6)">6</button>
-                <button class="button" onclick="appendOperator('-')">-</button>
+                
+                <button class="opperand" onclick="appendOperator('(')">(</button>
+                <button class="opperand" onclick="appendOperator(')')">)</button>
+                <button class="opperand" onclick="appendOperator('%')">%</button>
+                <button class="opperand" onclick="appendOperator('/')">/</button>
                 <button class="button" onclick="appendNumber(7)">7</button>
                 <button class="button" onclick="appendNumber(8)">8</button>
                 <button class="button" onclick="appendNumber(9)">9</button>
-                <button class="button" onclick="appendOperator('*')">x</button>
+                <button class="opperand" onclick="appendOperator('*')">x</button>
+                <button class="button" onclick="appendNumber(4)">4</button>
+                <button class="button" onclick="appendNumber(5)">5</button>
+                <button class="button" onclick="appendNumber(6)">6</button>
+                <button class="opperand" onclick="appendOperator('-')">-</button>
+                <button class="button" onclick="appendNumber(1)">1</button>
+                <button class="button" onclick="appendNumber(2)">2</button>
+                <button class="button" onclick="appendNumber(3)">3</button>
+                <button class="opperand" onclick="appendOperator('+')">+</button>
                 <button class="button" onclick="appendNumber(0)">0</button>
-                <button class="button" onclick="appendOperator('/')">/</button>
-                <button class="button" onclick="calculate()">=</button>
+                <button class="button" onclick="appendNumber('.')">.</button>
+                <button class="button" onclick="clearDisplay()">C</button>
+                <button class="opperand" onclick="calculate()">=</button>
             </div>
         </div>
         
