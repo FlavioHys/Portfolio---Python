@@ -1,0 +1,232 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+
+/* iPhone styling */
+// colors
+$silver-color: #e2e3e4;
+$silver-dark-color : darken($silver-color, 10%);
+$bazzel-color: #fff;
+$screen-color: #1c1c1c;
+$sensor-color: #444;
+
+// sizes
+$iphonex-height: 694px;
+$iphonex-width: 342px;
+$top-header-padding: 15px;
+$header-padding: 22px;
+
+// mixin
+@mixin center{
+  display: flex;
+  justify-content: center;
+}
+@mixin pseudo($position: absolute, $content: ""){
+    content: $content;
+    position: $position;
+}   
+@mixin sensor($border-radius, $height, $width, $left, $margin-left, $top){
+  background: $sensor-color;
+  border-radius: $border-radius;
+  height: $height;
+  width: $width;
+  left: $left;
+  margin-left: $margin-left;
+  top: $top;
+}
+
+/*------------------------------------------------*/
+
+body{
+  @include center;
+  padding: 5%;
+}
+
+.iphone-x {
+  *{
+    &,
+    &::before,
+    &::after {
+      box-sizing: border-box;
+      display: block;
+    }
+  }
+  
+  position: relative;
+  z-index: 1;
+  height: $iphonex-height;
+  width: $iphonex-width;
+
+  .bazzel {
+    background: $bazzel-color;
+    border-radius: 54px;
+    box-shadow: inset 0 0 2px 2px $silver-dark-color, inset 0 0 0 6px $silver-color;
+    height: $iphonex-height;
+    padding: $top-header-padding $header-padding;
+    width: $iphonex-width;
+    z-index: 1;
+  }
+
+  .screen {
+    background: $screen-color;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 32px;
+    height: 665px;
+    position: relative;
+    width: 314px;
+    margin-left: -8px;
+  }
+
+  .line {
+    &::after,
+    &::before {
+      @include pseudo;
+      border: solid rgba($sensor-color, 0.25);
+      border-width: 0 6px;
+      height: 5px;
+      left: 0;
+      width: 100%;
+      z-index: 9;
+    }
+    &::after {
+      top: 68px;
+    }
+    &::before {
+      bottom: 68px;
+    }
+  }
+
+  .header {
+    background: $bazzel-color;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    height: 20px;
+    left: 50%;
+    margin-left: -82px;
+    position: absolute;
+    top: 15px;
+    width: 164px;
+    z-index: 199;
+  }
+
+  .sensor-1 {
+    &::after,
+    &::before {
+      @include pseudo;
+    }
+    &::after {
+      @include sensor(50%,11px,11px,1%,10px,1px);
+    }
+    &::before {
+      @include sensor(50%,11px,11px,10%,20px,1px);
+    }
+  }
+
+  .sensor-2 {
+    &::after,
+    &::before {
+      @include pseudo;
+    }
+    &::before {
+      @include sensor(2.5px,5px,40px,50%,-20px,4px);
+    }
+  }
+
+  .sensor-3 {
+    &::after,
+    &::before {
+      @include pseudo;
+    }
+    &::before {
+      @include sensor(50%,11px,11px,50%,35px,1px);
+    }
+    &::after {
+      @include sensor(50%,15px,15px,65%,33px,-1px);
+    }
+  }
+
+  .volume-button {
+    background: $silver-dark-color;
+    height: 26px;
+    left: -2px;
+    position: absolute;
+    top: 92px;
+    width: 3px;
+
+    &::after,
+    &::before {
+      @include pseudo;
+      background: $silver-dark-color;
+      height: 50px;
+      left: 0;
+      width: 3px;
+    }
+
+    &::after {
+      top: 48px;
+    }
+    &::before {
+      top: 112px;
+    }
+  }
+
+  .power-button {
+    background: $silver-dark-color;
+    height: 80px;
+    right: -2px;
+    position: absolute;
+    top: 160px;
+    width: 3px;
+  }
+}
+
+
+.t-r-info {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 17px;
+  top: 8px;
+  font-size: 10px;
+}
+
+.battery {
+  position: relative;
+  margin-top: 4px;
+  height: 7px;
+  width: 14px;
+  border: 0.7px solid rgba(255, 255, 255, 0.709);
+  border-radius: 2px;
+  .bar {
+    width: calc(80% - 2px);
+    height: calc(100% - 2px);
+    background-color: #fff;
+    margin: 1px;
+    border-radius: 1px;
+  }
+  .dot {
+    position: absolute;
+    right: -2px;
+    top: 1.5px;
+    width: 1px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.709);
+    border-radius: 2px;
+  }
+}
