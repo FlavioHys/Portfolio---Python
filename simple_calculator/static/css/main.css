@@ -31,20 +31,41 @@ header {
     height: 50%;
 }
 
-/* Movable buttons styling */
+#result {
+    width: 30%;
+    height: 220px;
+    position: relative;
+    right: -35%;
+    background-color: #352a23;
+    color: white;
+    padding: 20px;
+    top: -510px;
+    font-size: 1.5rem;
+    text-align: right;
+    border-radius: 10%;
+    border-color: #352a23;
+}
+
 #main-buttons {
-    position: absolute;
-    top: 55%;
+    position: relative;
+    top: -510px;
     left: 49.95%;
+    width: 30%;
     transform: translate(-50%, -50%);
 }
 
 .display {
     margin-bottom: 10px;
+    position: relative;
+    top: -730px;
+    left: 435px;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    height: 200px;
 }
 
 #result {
-    width: 90%;
+    width: auto;
     justify-content: center;
     padding: 20px;
     top: 10%;
@@ -54,9 +75,9 @@ header {
 
 .buttons {
     display: grid;
-    top: 9%;
+    top: 20%;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 5px;
 }
 
 .button {
@@ -70,6 +91,7 @@ header {
     box-shadow:  6px 6px 14px #231b16,
                 -6px -6px 14px #312720;
 }
+
 .opperand {
     padding: 25%;
     font-size: 1.7rem;
@@ -81,7 +103,6 @@ header {
     background: linear-gradient(145deg, #d5af98, #b39480);
     box-shadow:  6px 6px 14px #a58876,
                 -6px -6px 14px #e9c0a6;
-
 }
 
 .button:hover {
