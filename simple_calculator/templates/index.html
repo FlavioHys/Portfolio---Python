@@ -2,6 +2,17 @@
 <html>
 
 <head>
+    <title>Cal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/main.css" />
+    <style>
+
+
+    </style>
+</head>
+
+<head>
     <title>UTA - Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,64 +31,77 @@
                 <h3>Let's get started.</h3>
             </div>
         </div>
-        <figure class="iphone">
-            <div class="phone">
+        <div class="iphone-x">
+            <div class="bazzel">
+                <div class="rectangle"></div>
+                <div class="screen"></div>
             </div>
-          </figure>
-        <div class="content">
-            <div class="container-fluid text-center top-container">
-                <img src="static/images/calculator_blank.png" class="responsive-image">
+            <div class="line"></div>
+            <div class="header">
+                <div class="sensor-1"></div>
+                <div class="sensor-2"></div>
+                <div class="sensor-3"></div>
+            </div>
+            <div class="volume-button"></div>
+            <div class="power-button"></div>
+            <div class="display">
+                <input type="text" id="result" readonly>
+            </div>
+            <!-- Battery and Signal -->
+            <div class="t-r-info">
+                <div class="dots">...</div>
+                <div class="battery">
+                    <div class="bar"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div id="main-buttons">
+                <div class="buttons">
+
+                    <button class="opperand" onclick="appendOperator('(')">(</button>
+                    <button class="opperand" onclick="appendOperator(')')">)</button>
+                    <button class="opperand" onclick="appendOperator('%')">%</button>
+                    <button class="opperand" onclick="appendOperator('/')">/</button>
+                    <button class="button" onclick="appendNumber(7)">7</button>
+                    <button class="button" onclick="appendNumber(8)">8</button>
+                    <button class="button" onclick="appendNumber(9)">9</button>
+                    <button class="opperand" onclick="appendOperator('*')">x</button>
+                    <button class="button" onclick="appendNumber(4)">4</button>
+                    <button class="button" onclick="appendNumber(5)">5</button>
+                    <button class="button" onclick="appendNumber(6)">6</button>
+                    <button class="opperand" onclick="appendOperator('-')">-</button>
+                    <button class="button" onclick="appendNumber(1)">1</button>
+                    <button class="button" onclick="appendNumber(2)">2</button>
+                    <button class="button" onclick="appendNumber(3)">3</button>
+                    <button class="opperand" onclick="appendOperator('+')">+</button>
+                    <button class="button" onclick="appendNumber(0)">0</button>
+                    <button class="button" onclick="appendNumber('.')">.</button>
+                    <button class="button" onclick="clearDisplay()">C</button>
+                    <button class="opperand" onclick="calculate()">=</button>
+                </div>
+            </div>
+
+                <script>
+                function clearDisplay() {
+                    document.getElementById('result').value = '';
+                }
+
+                function appendNumber(number) {
+                    document.getElementById('result').value += number;
+                }
+
+                function appendOperator(operator) {
+                    document.getElementById('result').value += operator;
+                }
+
+                function calculate() {
+                    const expression = document.getElementById('result').value;
+                    const result = eval(expression);
+                    document.getElementById('result').value = result;
+                }
+                </script>
             </div>
         </div>
-        <div class="display">
-            <input type="text" id="result" readonly>
-        </div>
-        <div id="main-buttons">
-            <div class="buttons">
-
-                <button class="opperand" onclick="appendOperator('(')">(</button>
-                <button class="opperand" onclick="appendOperator(')')">)</button>
-                <button class="opperand" onclick="appendOperator('%')">%</button>
-                <button class="opperand" onclick="appendOperator('/')">/</button>
-                <button class="button" onclick="appendNumber(7)">7</button>
-                <button class="button" onclick="appendNumber(8)">8</button>
-                <button class="button" onclick="appendNumber(9)">9</button>
-                <button class="opperand" onclick="appendOperator('*')">x</button>
-                <button class="button" onclick="appendNumber(4)">4</button>
-                <button class="button" onclick="appendNumber(5)">5</button>
-                <button class="button" onclick="appendNumber(6)">6</button>
-                <button class="opperand" onclick="appendOperator('-')">-</button>
-                <button class="button" onclick="appendNumber(1)">1</button>
-                <button class="button" onclick="appendNumber(2)">2</button>
-                <button class="button" onclick="appendNumber(3)">3</button>
-                <button class="opperand" onclick="appendOperator('+')">+</button>
-                <button class="button" onclick="appendNumber(0)">0</button>
-                <button class="button" onclick="appendNumber('.')">.</button>
-                <button class="button" onclick="clearDisplay()">C</button>
-                <button class="opperand" onclick="calculate()">=</button>
-            </div>
-        </div>
-
-        <script>
-            function clearDisplay() {
-                document.getElementById('result').value = '';
-            }
-
-            function appendNumber(number) {
-                document.getElementById('result').value += number;
-            }
-
-            function appendOperator(operator) {
-                document.getElementById('result').value += operator;
-            }
-
-            function calculate() {
-                const expression = document.getElementById('result').value;
-                const result = eval(expression);
-                document.getElementById('result').value = result;
-            }
-        </script>
     </div>
 </body>
-
 </html>
