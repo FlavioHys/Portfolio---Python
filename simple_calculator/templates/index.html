@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>UTA - Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/main.css"/>
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/main.css" />
     <style>
 
-        
+
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="banner">
@@ -18,19 +20,21 @@
                 <h3>Let's get started.</h3>
             </div>
         </div>
-    
+        <figure class="iphone">
+            <div class="phone">
+            </div>
+          </figure>
         <div class="content">
             <div class="container-fluid text-center top-container">
                 <img src="static/images/calculator_blank.png" class="responsive-image">
             </div>
         </div>
-    
+        <div class="display">
+            <input type="text" id="result" readonly>
+        </div>
         <div id="main-buttons">
-            <div class="display">
-                <input type="text" id="result" readonly>
-            </div>
             <div class="buttons">
-                
+
                 <button class="opperand" onclick="appendOperator('(')">(</button>
                 <button class="opperand" onclick="appendOperator(')')">)</button>
                 <button class="opperand" onclick="appendOperator('%')">%</button>
@@ -53,7 +57,7 @@
                 <button class="opperand" onclick="calculate()">=</button>
             </div>
         </div>
-        
+
         <script>
             function clearDisplay() {
                 document.getElementById('result').value = '';
@@ -75,4 +79,5 @@
         </script>
     </div>
 </body>
+
 </html>
