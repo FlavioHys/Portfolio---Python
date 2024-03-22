@@ -273,7 +273,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.display {
+.iphone-x .display {
     position: relative;
     top: -930px;
     left: 435px;
