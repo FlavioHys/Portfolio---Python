@@ -1,3 +1,2 @@
-Hello, This repository is to showcase python projects.
-All the projects are simply to demonstrate my knowledge and understanding of python,
-and its libraries.
+Hello, This repository is to showcase a calculator API.
+I'll be updating regularly to add more functionality to the backend and the front end.
